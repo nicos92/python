@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"extensions": {
+		"recommendations": [
+			"oderwat.indent-rainbow",
+			"njpwerner.autodocstring"
+		]
+	}
+}
