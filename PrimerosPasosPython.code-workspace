@@ -7,7 +7,9 @@
 	"extensions": {
 		"recommendations": [
 			"oderwat.indent-rainbow",
-			"njpwerner.autodocstring"
+			"njpwerner.autodocstring",
+			"visualstudioexptteam.vscodeintellicode",
+			"usernamehw.errorlens"
 		]
 	}
 }
