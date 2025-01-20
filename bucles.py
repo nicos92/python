@@ -24,11 +24,32 @@ print("")
 
 print("final del programita")
 
-palabra = "nicolas"
+palabra = "nicolas salomon sandoval"
+contador = 0
 for letra in palabra:
-    print("entrando al primer for")
-    if letra == "o":
+    if letra == " ":
         continue
+    contador+=1
     print(letra )
-print("")
+print("contadodr ", contador)
+
+'''
+while True: # se utiliza para usar con Ctl + c
+    pass
+
+'''
+
+class MiClase:
+    pass # Para implementar más tarde
+
+email = input("Ingrse su email: ")
+
+for i in email:
+    if i == "@":
+        arroba = True
+        break
+else:
+    arroba = False
+
+print("arroba: " , arroba)
 
