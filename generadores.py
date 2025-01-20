@@ -38,11 +38,11 @@ for i in guardaPares:
 
 print(next(guardaPares))
 
-print("Lineas de codigo al azar")
+print(       "Lineas de codigo al azar")
 
 print(next(guardaPares))
 
-print("mas lineas de codigo al azar")
+print(           "Lineas de codigo al azar")
 
 
 # * Yield from
@@ -82,3 +82,6 @@ guardaCiudadess = devuelveCiudadess("Buenos aires", "Cordoba", "Mendoza", "La Pa
 
 print(next(guardaCiudadess))
 print(next(guardaCiudadess))
+
+for a in [1,2,2,2,2,2,2,2,2]:
+    print(a)

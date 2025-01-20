@@ -22,7 +22,8 @@ for a in range(19, 28, 2):
 
 print("")
 
-print("final del programita")
+    
+print(        "final del programita")
 
 palabra = "nicolas salomon sandoval"
 contador = 0
@@ -32,6 +33,9 @@ for letra in palabra:
     contador+=1
     print(letra )
 print("contadodr ", contador)
+
+print(contador)
+
 
 '''
 while True: # se utiliza para usar con Ctl + c
