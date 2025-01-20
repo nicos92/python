@@ -10,3 +10,6 @@ for a in range(19, 28, 2):
     print(f"el valor del rango es: {a}")
 
 print("")
+
+print("final del programita")
+
