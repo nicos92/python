@@ -9,7 +9,8 @@
 			"oderwat.indent-rainbow",
 			"njpwerner.autodocstring",
 			"visualstudioexptteam.vscodeintellicode",
-			"usernamehw.errorlens"
+			"usernamehw.errorlens",
+			"ms-python.black-formatter"
 		]
 	}
 }
