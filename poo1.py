@@ -1,26 +1,43 @@
 class Coche:
-    largoChasis = 250
-    anchoChasis = 120
-    ruedas = 4
-    enMarcha = False
 
-    def Arrancar(self):  # adv 'self' hace referencia al propio objeto. 'this'
-        self.enMarcha = True
+    # * Metodo constructor
+    def __init__(self):
+        self.__largoChasis = 250
+        self.__anchoChasis = 120
+        self.__ruedas = 4
+        self.__enMarcha = False
+        self.__conbustible = False
+
+    def Arrancar(
+        self, arrancamos
+    ):  # adv 'self' hace referencia al propio objeto. 'this'
+        self.__enMarcha = arrancamos
+        self.Estado()
 
     def Estado(self):
-        if self.enMarcha:
+        if self.__enMarcha:
             return "El coche está en marcha"
         else:
             return "El coche está detenido"
+        
+    def ChequeoInterno(self):
+        return self.__conbustible
+        
+    def VerDatos(self):
+        return "el Coche tiene: ", self.__largoChasis, " de largo, ", self.__anchoChasis, " de ancho, ", self.__ruedas, " ruedas"
 
 
 coche1 = Coche()  # * instanciacion de una clase sin el new como en otros lenguajes
 
-print("Ancho del coche: ", coche1.anchoChasis)
-print("Largo del coche: ", coche1.largoChasis)
-print("El coche tiene: ", coche1.ruedas, " ruedas")
+#//print("Ancho del coche: ", coche1.__anchoChasis)
+#//print("Largo del coche: ", coche1.__largoChasis)
+#//print("El coche tiene: ", coche1.__ruedas, " ruedas")
 
 print(coche1.Estado())
-coche1.Arrancar()
+coche1.Arrancar(True)
 
 print(coche1.Estado())
+
+
+print(coche1.VerDatos())
+print(coche1.VerDatos())
