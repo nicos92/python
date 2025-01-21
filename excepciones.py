@@ -1,13 +1,13 @@
-"""
-Excepciones ¿Qué son?
-» Las excepciones son errores que ocurren durante la ejecución del programa.
-La sintaxis del código es correcta pero durante la ejecución ha ocurrido "algo inesperado",
 
-+ Este tipo de errores de ejecución se pueden
-controlar para que la ejecución del programa
-continue. Es lo que se conoce como manejo o
-control de excepciones.
-"""
+# - Excepciones ¿Qué son?
+# *» Las excepciones son errores que ocurren durante la ejecución del programa.
+# *La sintaxis del código es correcta pero durante la ejecución ha ocurrido "algo inesperado",
+
+# *+ Este tipo de errores de ejecución se pueden
+# *controlar para que la ejecución del programa
+# *continue. Es lo que se conoce como manejo o
+# *control de excepciones.
+
 
 def suma(num1, num2):
     return num1 + num2
@@ -27,6 +27,8 @@ def divide(num1, num2):
     except ZeroDivisionError:
         print("no se puede dividir por cero")
         return "operacion invalida"
+
+# * utilizando las excepciones
 while True:
     try:
         op1 = int(input("Introduce el primer numero: "))
@@ -38,7 +40,7 @@ while True:
         print("no se puede dividir entre cero")
     except:
         print("Ha ocurrido un error")
-    finally:
+    finally: # adv siempre se ejecuta el bloque finally
         print("Ingresos Correctos")
 
 operacion = input("Introduce la operacion a realizar (suma,resta,multiplica,divide): ")

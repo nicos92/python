@@ -9,10 +9,10 @@ pueden recorrer).
 se solicita el siguiente. Esta característica es conocida como "suspensión de estado".
 
 | Generadores ¿Qué utilidad tienen?
-* Son más eficientes que las funciones tradicionales
++ Son más eficientes que las funciones tradicionales
 + Muy útiles con listas de valores infinitos
-* Bajo determinados escenarios, será muy útil que un generador devuelva los valores de uno en uno.
-* adicionalmente puede utilizar un return
++ Bajo determinados escenarios, será muy útil que un generador devuelva los valores de uno en uno.
++ Adicionalmente puede utilizar un return
 """
 
 
@@ -49,13 +49,8 @@ print(           "Lineas de codigo al azar")
 
 # * Utilidad: Simplificar el código de los generadores en el caso de utilizar bucles anidados
 
-
+# adv "*ciudades" puede recibiar 1 o varios elementos, numero indeterminado de elementos. los va reciir en forma de tupla
 def devuelveCiudades(*ciudades):
-    """# adv "*ciudades" puede recibiar 1 o varios elementos, numero indeterminado de elementos. los va reciir en forma de tupla
-
-    Yields:
-        _type_: _description_
-    """
     for elemto in ciudades:
         for subElem in elemto:
             yield subElem
@@ -67,6 +62,12 @@ print(next(guardaCiudades))
 print(next(guardaCiudades))
 
 # * Yield from
+# // Yield from
+# todo Yield from
+# adv Yield from
+# ? Yield from
+# ! Yield from
+# - Yield from 
 
 
 # * Utilidad: Simplificar el código de los generadores en el caso de utilizar bucles anidados
@@ -83,5 +84,5 @@ guardaCiudadess = devuelveCiudadess("Buenos aires", "Cordoba", "Mendoza", "La Pa
 print(next(guardaCiudadess))
 print(next(guardaCiudadess))
 
-for a in [1,2,2,2,2,2,2,2,2]:
+for a in range(len([1,2,2,2,2,2,2,2,2])):
     print(a)

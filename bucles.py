@@ -43,6 +43,7 @@ while True: # se utiliza para usar con Ctl + c
 
 '''
 
+
 class MiClase:
     pass # Para implementar más tarde
 
