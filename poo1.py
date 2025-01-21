@@ -7,6 +7,7 @@ class Coche:
         self.__ruedas = 4
         self.__enMarcha = False
         self.__conbustible = False
+        
 
     def Arrancar(
         self, arrancamos
@@ -15,12 +16,17 @@ class Coche:
         self.Estado()
 
     def Estado(self):
-        if self.__enMarcha:
-            return "El coche está en marcha"
+        if self.__conbustible:
+            if self.__enMarcha:
+                return "El coche está en marcha"
+            else:
+                return "El coche está detenido"
         else:
-            return "El coche está detenido"
+            return("El coche no tiene combustible")    
+		
         
-    def ChequeoInterno(self):
+    def __ChequeoInterno(self):
+        print("Verificando que haya combustible")
         return self.__conbustible
         
     def VerDatos(self):

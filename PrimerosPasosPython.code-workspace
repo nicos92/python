@@ -23,12 +23,11 @@
 
 	"settings": {
 		"extensions.ignoreRecommendations": true,
-		"extensions.disabled": ["josefpihrt-vscode.roslynator","ms-dotnettools.vscode-dotnet-runtime","ms-dotnettools.dotnet-maui","ms-dotnettools.csharp"]
+	
 
 
 	},
 
-	"extensions.ignoreRecommendations": ["josefpihrt-vscode.roslynator","ms-dotnettools.vscode-dotnet-runtime","ms-dotnettools.dotnet-maui","ms-dotnettools.csharp"],
-    "extensions.disabled": ["josefpihrt-vscode.roslynator","ms-dotnettools.vscode-dotnet-runtime","ms-dotnettools.dotnet-maui","ms-dotnettools.csharp"],
+	
 
 }
