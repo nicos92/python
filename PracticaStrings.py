@@ -14,3 +14,10 @@ if int(edad) > 18:
 else:
     print("no puede pasar")
 
+destacar_comision = lambda comision: "{}$$$ que comision hermano".format(comision) #* funcion format() para formatear strings
+
+comision:float = '1234f124124' #! pense que declarando la variable coo float iba a tener que ser obligado a usar float
+
+print(destacar_comision(comision=comision))
+print(comision)
+
