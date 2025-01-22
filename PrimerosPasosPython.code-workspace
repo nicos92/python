@@ -4,9 +4,7 @@
 			"path": "."
 		}
 	],
-
 	"extensions": {
-
 		"recommendations": [
 			"oderwat.indent-rainbow",
 			"njpwerner.autodocstring",
@@ -14,20 +12,13 @@
 			"usernamehw.errorlens",
 			"ms-python.black-formatter"
 		],
-		"unwantedRecommendations": ["josefpihrt-vscode.roslynator","ms-dotnettools.vscode-dotnet-runtime"],
-		
-
-
+		"unwantedRecommendations": [
+			"josefpihrt-vscode.roslynator",
+			"ms-dotnettools.vscode-dotnet-runtime"
+		],
 	},
-
-
 	"settings": {
 		"extensions.ignoreRecommendations": true,
-	
-
-
+		"workbench.colorTheme": "Bluloco Dark Italic",
 	},
-
-	
-
 }

@@ -1,0 +1,7 @@
+PAQUETES
+• ¿Qué son?
+• Directorios donde se almacenarán módulos relacionados entre sí.
+• ¿para qué sirven?
+• Para organizar y reutilizar los módulos
+• ¿Cómo se crea un paquete?
+• Tan sencillo como crear una carpeta con un archivo __init__.py

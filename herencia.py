@@ -1,6 +1,7 @@
-# adv HERENCIA
-# * Para reutilizar código en caso de crear objetos similares
 
+#!#?
+# * HERENCIA
+# * Para reutilizar código en caso de crear objetos similares
 
 class Vehiculo:
     def __init__(self, marca: str, modelo: str):
