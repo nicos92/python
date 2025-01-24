@@ -29,6 +29,15 @@ labelNombre = Label(
     pady=4,
 )
 labelNombre.grid(row=0,column=0, sticky="w")
+txtNombre = Entry(
+    master=mainFrame,
+    bg="#101010",
+    foreground="#fdfdfd",
+    font=("Hack Nerd Font", 10, "normal"),
+    justify= "left"
+    
+)
+txtNombre.grid(row=0,column=1)
 labelApellido = Label(
     master=mainFrame,
     text="Apellido: ",
@@ -39,6 +48,14 @@ labelApellido = Label(
     pady=4,
 )
 labelApellido.grid(row=1,column=0,sticky="w")
+txtApellido = Entry(
+    master=mainFrame,
+    bg="#101010",
+    foreground="#fdfdfd",
+    font=("Hack Nerd Font", 10, "normal"),
+    justify="left",
+)
+txtApellido.grid(row=1,column=1)
 labelDireccion = Label(
     master=mainFrame,
     text="Direccion: ",
@@ -49,6 +66,14 @@ labelDireccion = Label(
     pady=4
 )
 labelDireccion.grid(row=2, column=0, sticky="w")
+txtDireccion = Entry(
+    master=mainFrame,
+    bg="#101010",
+    foreground="#fdfdfd",
+    font=("Hack Nerd Font", 10, "normal"),
+    justify="left",
+)
+txtDireccion.grid(row=2,column=1)
 labelPassword = Label(
     master=mainFrame,
     text="Password: ",
@@ -60,33 +85,8 @@ labelPassword = Label(
 )
 labelPassword.grid(row=3, column=0, sticky="w")
 
-txtNombre = Entry(
-    master=mainFrame,
-    bg="#101010",
-    foreground="#fdfdfd",
-    font=("Hack Nerd Font", 10, "normal"),
-    justify= "left"
-    
-)
-txtNombre.grid(row=0,column=1)
 
-txtApellido = Entry(
-    master=mainFrame,
-    bg="#101010",
-    foreground="#fdfdfd",
-    font=("Hack Nerd Font", 10, "normal"),
-    justify="left",
-)
-txtApellido.grid(row=1,column=1)
 
-txtDireccion = Entry(
-    master=mainFrame,
-    bg="#101010",
-    foreground="#fdfdfd",
-    font=("Hack Nerd Font", 10, "normal"),
-    justify="left",
-)
-txtDireccion.grid(row=2,column=1)
 txtPassword = Entry(
     master=mainFrame,
     bg="#101010",
@@ -96,6 +96,30 @@ txtPassword = Entry(
     show="?"
 )
 txtPassword.grid(row=3,column=1)
+labelComentarios = Label(
+    master=mainFrame,
+    text="comentarios: ",
+    bg="#101010",
+    foreground="#fdfdfd",
+    font=("Hack Nerd Font", 10, "normal"),
+    padx=4,
+    pady=4
+)
+labelComentarios.grid(row=4, column=0, sticky="w")
+
+
+
+txtcomentarios = Text(
+    master=mainFrame,
+    bg="#101010",
+    foreground="#fdfdfd",
+    font=("Hack Nerd Font", 10, "normal"),
+    width=4,
+    height=20,
+    max=4,
+    maxundo=4
+)
+txtcomentarios.grid(row=4,column=1)
 
 txtNombre.focus()
 raiz.mainloop()
