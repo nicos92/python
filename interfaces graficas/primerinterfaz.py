@@ -227,8 +227,8 @@ def Eventoboton():
     apellido.set("")
     direccion.set("")
     password.set("")
-    
-
+    txtcomentarios.delete("1.0","end")
+    txtNombre.focus()
 
 miButton = Button(
     master=mainFrame,
