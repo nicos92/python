@@ -15,7 +15,7 @@ class MiButtonNumerico:
         rowspan1: int,
         columspan1: int,
         font1= ("Hack Nerd Font", 12, "normal"),
-        command1 = lambda:""
+        command1 = lambda:None
     ):
         return Button(
             master=masters,

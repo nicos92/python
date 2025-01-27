@@ -2,13 +2,72 @@ from tkinter import *
 from tkinter import ttk
 from botones import *
 from colores import *
+import re
 
+
+# * agrega el ultimo numero pulsado
+def numeroPulsado(num:str):
+    global operacion
+
+    if operacion != "":
+        numeroPantalla.set(num)
+        operacion=""
+    else:    
+        if numeroPantalla.get() == "0":
+            numeroPantalla.set("")
+            numeroPantalla.set(numeroPantalla.get()+num)
+        else:
+            numeroPantalla.set(numeroPantalla.get()+num)
+
+
+# * elimina el ultimo caracter del cuadro de texto
+def eliminar_ultimo_caracter():
+    # Obtener el valor actual del StringVar
+    valor_actual = numeroPantalla.get()
+
+    # Verificar que el valor no esté vacío
+    if valor_actual:
+        # Eliminar el último carácter
+        nuevo_valor = valor_actual[:-1]
+
+        # Actualizar el StringVar con el nuevo valor
+        numeroPantalla.set(nuevo_valor)
+
+# * valida que la entrada de texto sea siempre un numero
+def validate_input_number(P):
+    # Expresión regular que permite letras, números y espacios
+    pattern = r"^[0-9\-.\+\*/\%]*$"
+    # Verifica si el nuevo texto coincide con el patrón
+    return bool(re.match(pattern, P))
+
+def suma(num):
+    global operacion
+    global resultado
+    resultado += int(num)
+    operacion = "suma"
+    numeroPantalla.set(resultado)
+
+def elResultado():
+    global resultado
+    resultado += int(numeroPantalla.get())
+    numeroPantalla.set(resultado)
+    resultado=0
+
+# * variables globales
+operacion = ""
+resultado =0
+
+#* comienzo de la ventana
 root = Tk()
+
+
+
 root.config(bg=MisColores.Black)
+validarNumeros = root.register(validate_input_number)
 # * PULSACION DE BOTON
 numeroPantalla= StringVar()
-def numeroPulsado(num:str):
-    numeroPantalla.set(numeroPantalla.get()+num)
+numeroPantalla.set("0")
+
 # * TOP FRAME CUENTA
 
 
@@ -23,6 +82,8 @@ cuadroCuenta = Entry(
     font=("BigBlueTerm437 Nerd font", 18, "normal"),
     bg=MisColores.Black,
     foreground=MisColores.verdeConsola,
+    validate="key",
+    validatecommand=(validarNumeros, '%P'),
 )
 cuadroCuenta.pack()
 
@@ -121,6 +182,7 @@ back = MiButtonNumerico(
     rowspan1=1,
     columspan1=1,
     font1=("Symbols Nerd font", 14, "normal"),
+    command1= eliminar_ultimo_caracter
 )
 CE = MiButtonNumerico(
     masters=mainFrame,
@@ -365,6 +427,7 @@ igual = MiButtonNumerico(
     rowspan1=2,
     columspan1=1,
     font1=("BigBlueTerm437 Nerd font", 14, "normal"),
+    command1=lambda:elResultado()
 )
 # * FILA 5
 
@@ -404,6 +467,7 @@ mas = MiButtonNumerico(
     rowspan1=1,
     columspan1=1,
     font1=("BigBlueTerm437 Nerd font", 14, "normal"),
+    command1=lambda:suma(numeroPantalla.get())
 )
 
 
