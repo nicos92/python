@@ -68,6 +68,38 @@ root.config(bg=MisColores.White)
 root.columnconfigure(0, weight=1)
 root.columnconfigure(1, weight=1)
 
+
+#* barra de menu
+barraMenu = Menu(master=root)
+root.config(menu=barraMenu)
+
+archivoMenu = Menu(master=barraMenu, tearoff=0)
+
+archivoMenu.add_command(label="Nuevo")
+archivoMenu.add_separator()
+archivoMenu.add_command(label="Guardar")
+archivoMenu.add_command(label="Guardar Como")
+archivoMenu.add_separator()
+archivoMenu.add_command(label="Cerrar")
+archivoMenu.add_command(label="Salir", )
+
+edicionMenu = Menu(master=barraMenu, tearoff=0)
+edicionMenu.add_command(label="Copiar")
+edicionMenu.add_command(label="Cortar")
+edicionMenu.add_command(label="Pegar")
+edicionMenu.add_command(label="Deshacer")
+herramientasMenu = Menu(master=barraMenu, tearoff=0)
+
+ayudaMenu = Menu(master=barraMenu, tearoff=0)
+ayudaMenu.add_command(label="Licencia")
+ayudaMenu.add_command(label="Acerca de...")
+
+
+barraMenu.add_cascade(label="Archivo", menu=archivoMenu)
+barraMenu.add_cascade(label="Edicion", menu=edicionMenu)
+barraMenu.add_cascade(label="Herramientas", menu=herramientasMenu)
+barraMenu.add_cascade(label="Ayuda", menu=ayudaMenu)
+
 topFrame = Frame(master=root, height=50, bg=MisColores.White, padx=16, pady=16)
 topFrame.pack(fill="x")
 imagen = PhotoImage(
