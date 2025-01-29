@@ -1,12 +1,11 @@
+from tkinter import messagebox
 import re
 from tkinter import *
 from colores import *
 
-azulBG = "#F3F7F9"
-azulBG2 = "#002233"
-colorLetra = "#121212"
-colorLetra2 = "#f3f7f9"
 
+def verLicencia():
+    messagebox.showinfo(title="Licencia Libre", message="Primera App esta bajo un lincencia GNU")
 
 def validate_number_input(P):
     # Verifica si el nuevo texto es un número o está vacío
