@@ -1,5 +1,6 @@
 import re
-from tkinter import Tk,Frame,Label,Entry,Text,Button,PhotoImage,Scrollbar,StringVar
+from tkinter import *
+from colores import *
 
 azulBG = "#F3F7F9"
 azulBG2 = "#002233"
@@ -63,11 +64,11 @@ root.title("Ventana Pruebas")
 # root.geometry("800x500")
 root.resizable(False, False)
 root.iconbitmap(r"C:\Users\nicos92\Documents\python\interfaces graficas\alien-8bit.ico")
-root.config(bg="#010101")
+root.config(bg=MisColores.White)
 root.columnconfigure(0, weight=1)
 root.columnconfigure(1, weight=1)
 
-topFrame = Frame(master=root, height=50, bg=azulBG2, padx=16, pady=16)
+topFrame = Frame(master=root, height=50, bg=MisColores.White, padx=16, pady=16)
 topFrame.pack(fill="x")
 imagen = PhotoImage(
     master=topFrame,
@@ -77,17 +78,17 @@ imagen = PhotoImage(
 titulo = Label(
     master=topFrame,
     text="Primer App",
-    bg=azulBG2,
-    fg=colorLetra2,
+    bg=MisColores.White,
+    fg=MisColores.Black,
     font=("Hack Nerd Font", 12, "normal"),
 )  # , image=imagen)
 titulo.pack()
 
 # * MAIN FRAME
-mainFrame = Frame(master=root, width="800", height="450", bg=azulBG, padx=20, pady=20)
-mainFrame.config(width="800", height="450", bg=azulBG, relief="flat", bd=2)
+mainFrame = Frame(master=root, width="800", height="450", bg=MisColores.White, padx=20, pady=20)
+mainFrame.config(relief="flat", bd=2)
 mainFrame.pack(fill="both")
-#? STRING VARS
+# ? STRING VARS
 nombre = StringVar()
 apellido = StringVar()
 direccion= StringVar()
@@ -97,8 +98,8 @@ comentario=StringVar()
 labelNombre = Label(
     master=mainFrame,
     text="Nombre: ",
-    bg=azulBG,
-    foreground=colorLetra,
+    bg=MisColores.White,
+    foreground=MisColores.Black,
     font=("Hack Nerd Font", 10, "normal"),
     padx=4,
     pady=4,
@@ -108,8 +109,8 @@ labelNombre.grid(row=0, column=0, sticky="e")
 txtNombre = Entry(
     master=mainFrame,
     textvariable=nombre,
-    bg=azulBG,
-    foreground=colorLetra,
+    bg=MisColores.Light,
+    foreground=MisColores.Black,
     font=("Hack Nerd Font", 10, "normal"),
     justify="left",
     validate="key",
@@ -121,8 +122,8 @@ txtNombre.grid(row=0, column=1, sticky="ew", padx=10, pady=10)
 labelApellido = Label(
     master=mainFrame,
     text="Apellido: ",
-    bg=azulBG,
-    foreground=colorLetra,
+    bg=MisColores.White,
+    foreground=MisColores.Black,
     font=("Hack Nerd Font", 10, "normal"),
     padx=4,
     pady=4,
@@ -131,8 +132,8 @@ labelApellido.grid(row=1, column=0, sticky="e")
 txtApellido = Entry(
     master=mainFrame,
     textvariable=apellido,
-    bg=azulBG,
-    foreground=colorLetra,
+    bg=MisColores.Light,
+    foreground=MisColores.Black,
     font=("Hack Nerd Font", 10, "normal"),
     justify="left",
     validate="key",
@@ -144,8 +145,8 @@ txtApellido.grid(row=1, column=1, sticky="ew", padx=10, pady=10)
 labelDireccion = Label(
     master=mainFrame,
     text="Direccion: ",
-    bg=azulBG,
-    foreground=colorLetra,
+    bg=MisColores.White,
+    foreground=MisColores.Black,
     font=("Hack Nerd Font", 10, "normal"),
     padx=4,
     pady=4,
@@ -156,8 +157,8 @@ labelDireccion.grid(row=2, column=0, sticky="e")
 txtDireccion = Entry(
     master=mainFrame,
     textvariable=direccion,
-    bg=azulBG,
-    foreground=colorLetra,
+    bg=MisColores.Light,
+    foreground=MisColores.Black,
     font=("Hack Nerd Font", 10, "normal"),
     justify="left",
     validate="key",
@@ -171,8 +172,8 @@ txtDireccion.grid(row=2, column=1, sticky="ew", padx=10, pady=10)
 labelPassword = Label(
     master=mainFrame,
     text="Password: ",
-    bg=azulBG,
-    foreground=colorLetra,
+    bg=MisColores.White,
+    foreground=MisColores.Black,
     font=("Hack Nerd Font", 10, "normal"),
     padx=4,
     pady=4,
@@ -184,8 +185,8 @@ labelPassword.grid(row=3, column=0, sticky="e")
 txtPassword = Entry(
     master=mainFrame,
     textvariable=password,
-    bg=azulBG,
-    foreground=colorLetra,
+    bg=MisColores.Light,
+    foreground=MisColores.Black,
     font=("Hack Nerd Font", 10, "normal"),
     justify="left",
     show="?",
@@ -196,8 +197,8 @@ txtPassword.grid(row=3, column=1, sticky="ew", padx=10, pady=10)
 labelComentarios = Label(
     master=mainFrame,
     text="comentarios: ",
-    bg=azulBG,
-    foreground=colorLetra,
+    bg=MisColores.White,
+    foreground=MisColores.Black,
     font=("Hack Nerd Font", 10, "normal"),
     padx=4,
     pady=4,
@@ -207,8 +208,8 @@ labelComentarios.grid(row=4, column=0, sticky="n")
 
 txtcomentarios = Text(
     master=mainFrame,
-    bg="#fdfdfd",
-    foreground=colorLetra,
+    bg=MisColores.Light,
+    foreground=MisColores.Black,
     font=("Hack Nerd Font", 10, "normal"),
     width=40,
     height=10,
@@ -229,16 +230,132 @@ def Eventoboton():
     password.set("")
     txtcomentarios.delete("1.0","end")
     txtNombre.focus()
+    print(radioOpcion.get())
 
 miButton = Button(
     master=mainFrame,
     text="Enviar",
-    bg="#0C3950",
-    foreground=colorLetra2,
+    bg=MisColores.Success,
+    foreground=MisColores.Light,
     font=("Hack Nerd Font", 12, "normal"),
     command=Eventoboton
 )
 miButton.grid(row=5,column=1, sticky="ew", padx=8, pady=8)
+
+# * radio boton
+radioOpcion = BooleanVar()
+
+labelGenero = Label(
+    master=mainFrame,
+    text="Genero: ",
+    bg=MisColores.White,
+    foreground=MisColores.Black,
+    font=("Hack Nerd Font", 10, "normal"),
+    padx=4,
+    pady=4,
+)
+labelGenero.grid(row=0, column=3, sticky="e")
+
+masculino = Radiobutton(
+    master=mainFrame,
+    text="Masculino",
+    variable=radioOpcion,
+    value=False,
+    bg=MisColores.White,
+    foreground=MisColores.Black,
+    font=("Hack Nerd Font", 10, "normal"),
+)
+masculino.grid(row=0, column=4)
+femenino = Radiobutton(
+    master=mainFrame,
+    text="Femenino",
+    variable=radioOpcion,
+    value=True,
+    bg=MisColores.White,
+    foreground=MisColores.Black,
+    font=("Hack Nerd Font", 10, "normal"),
+)
+femenino.grid(row=0,column=5)
+
+# * DESTINOS
+
+labelDestino = Label(
+    master=mainFrame,
+    text="Destinos: ",
+    bg=MisColores.White,
+    foreground=MisColores.Black,
+    font=("Hack Nerd Font", 10, "normal"),
+    padx=4,
+    pady=4,
+)
+
+labelDestino.grid(row=1, column=3, sticky="e")
+
+ckplaya = BooleanVar()
+ckbosque = BooleanVar()
+ckmontania = BooleanVar()
+destinos = StringVar()
+destinos.set("Mis destinos")
+
+
+def mostrarDestinos():
+    laplaya = "La Playa " if ckplaya.get() else ""
+    lamontania = " La Montaña " if ckmontania.get() else ""
+    elbosque = " El Bosque" if ckbosque.get() else ""
+    destinos.set("{}{}{}".format(laplaya, lamontania, elbosque))
+
+
+playa = Checkbutton(
+    master=mainFrame,
+    text="Playa",
+    bg=MisColores.White,
+    foreground=MisColores.Black,
+    font=("Hack Nerd Font", 10, "normal"),
+    variable=ckplaya,
+    onvalue=True,
+    offvalue=False,
+    command=lambda:mostrarDestinos(),
+)
+playa.grid(row=2, column=3, sticky="wens")
+
+montania = Checkbutton(
+    master=mainFrame,
+    text="Montania",
+    bg=MisColores.White,
+    foreground=MisColores.Black,
+    font=("Hack Nerd Font", 10, "normal"),
+    variable=ckmontania,
+    onvalue=True,
+    offvalue=False,
+    command=lambda: mostrarDestinos(),
+)
+montania.grid(row=2, column=4, sticky="wens")
+
+bosque = Checkbutton(
+    master=mainFrame,
+    text="Bosque",
+    bg=MisColores.White,
+    foreground=MisColores.Black,
+    font=("Hack Nerd Font", 10, "normal"),
+    variable=ckbosque,
+    onvalue=True,
+    offvalue=False,
+    command=lambda:mostrarDestinos()
+)
+bosque.grid(row=2, column=5, sticky="wens")
+
+
+labelMostrarDestinos = Label(
+    master=mainFrame,
+    textvariable=destinos,
+    bg=MisColores.White,
+    foreground=MisColores.Black,
+    font=("Hack Nerd Font", 10, "normal"),
+    padx=4,
+    pady=4,
+)
+
+labelMostrarDestinos.grid(row=3, column=3, sticky="wens")
 
 txtNombre.focus()
 root.mainloop()

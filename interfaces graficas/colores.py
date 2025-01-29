@@ -20,5 +20,4 @@ class MisColores:
     Green="#28a745"
     Teal="#20c997"
     Cyan="#17a2b8"
-
     verdeConsola = "#00dd00"
