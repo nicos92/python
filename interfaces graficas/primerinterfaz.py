@@ -1,4 +1,4 @@
-from tkinter import messagebox
+from tkinter import messagebox, font, filedialog
 import re
 from tkinter import *
 from colores import *
@@ -23,6 +23,17 @@ def cerrarDoc():
     valor = messagebox.askretrycancel(
         title="Reintentar", message="no es posible cerrar el documento"
     )
+
+def cambiarFuente():
+    font.Font()
+
+def abrirFichero():
+    fichero = filedialog.askopenfilename(title="Abrir Archivo",  initialdir= "c:\\", filetypes=(("Archivos de Texto (.txt)",".txt"),("Archivos Log (.log)", ".log"),("Todos los archivos","*.*")))
+    if fichero != "":
+        messagebox.showinfo("Archivo",(r"Se abrio el archivo {}".format(fichero)))
+
+
+
 
 def pruebaMessage():
     messagebox.IGNORE()
@@ -96,6 +107,7 @@ root.config(menu=barraMenu)
 archivoMenu = Menu(master=barraMenu, tearoff=0)
 
 archivoMenu.add_command(label="Nuevo")
+archivoMenu.add_command(label="Abrir", command=abrirFichero)
 archivoMenu.add_separator()
 archivoMenu.add_command(label="Guardar")
 archivoMenu.add_command(label="Guardar Como")
