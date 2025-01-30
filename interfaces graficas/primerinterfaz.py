@@ -7,6 +7,27 @@ from colores import *
 def verLicencia():
     messagebox.showinfo(title="Licencia Libre", message="Primera App esta bajo un lincencia GNU")
 
+def acercaDe():
+    messagebox.showwarning(title="Primer app", message="Primer App version 0.1")
+
+def salirQuestion():
+    valor = messagebox.askquestion(title="Salir de la App", message="Estas Seguro que desas salir de la app")
+    if valor == "yes":
+        root.destroy()
+
+    valor = messagebox.askokcancel(title="Salir de la App", message="Estas Seguro que desas salir de la app")
+    if valor == True:
+        root.destroy()
+
+def cerrarDoc():
+    valor = messagebox.askretrycancel(
+        title="Reintentar", message="no es posible cerrar el documento"
+    )
+
+def pruebaMessage():
+    messagebox.IGNORE()
+
+
 def validate_number_input(P):
     # Verifica si el nuevo texto es un número o está vacío
     return P.isdigit() or P == ""
@@ -68,7 +89,7 @@ root.columnconfigure(0, weight=1)
 root.columnconfigure(1, weight=1)
 
 
-#* barra de menu
+# * barra de menu
 barraMenu = Menu(master=root)
 root.config(menu=barraMenu)
 
@@ -79,19 +100,22 @@ archivoMenu.add_separator()
 archivoMenu.add_command(label="Guardar")
 archivoMenu.add_command(label="Guardar Como")
 archivoMenu.add_separator()
-archivoMenu.add_command(label="Cerrar")
-archivoMenu.add_command(label="Salir", )
+archivoMenu.add_command(label="Cerrar", command=cerrarDoc)
+archivoMenu.add_command(label="Salir", command=salirQuestion)
 
 edicionMenu = Menu(master=barraMenu, tearoff=0)
 edicionMenu.add_command(label="Copiar")
 edicionMenu.add_command(label="Cortar")
 edicionMenu.add_command(label="Pegar")
 edicionMenu.add_command(label="Deshacer")
+
 herramientasMenu = Menu(master=barraMenu, tearoff=0)
+herramientasMenu.add_command(label="Fuente")
+herramientasMenu.add_command(label="Prueba MB", command=pruebaMessage)
 
 ayudaMenu = Menu(master=barraMenu, tearoff=0)
-ayudaMenu.add_command(label="Licencia")
-ayudaMenu.add_command(label="Acerca de...")
+ayudaMenu.add_command(label="Licencia", command=verLicencia)
+ayudaMenu.add_command(label="Acerca de...",command=acercaDe)
 
 
 barraMenu.add_cascade(label="Archivo", menu=archivoMenu)
