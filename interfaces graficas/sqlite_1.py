@@ -43,15 +43,26 @@ for producto in productos:
     pass
 
 '''
-
 '''
 #! eliminar todos los registros de la tabla producto
 miCursor.execute("delete from producto")
 miConexionSqlite.commit()
+'''
 miCursor.execute("select count(nombre_articulo) from producto")
 
 cantidad = miCursor.fetchone()
 print(r"la cantidad es: ", cantidad)
-'''
+
+miCursor.execute("update producto set precio = 100000 where seccion = 'lacteos'")
+miConexionSqlite.commit()
+
+miCursor.execute("select * from producto order by codigo_articulo desc limit 10")
+
+productos = miCursor.fetchall()  # adv devuelve una lista de tuplas
+# print(productos)
+
+for producto in productos:
+    print(producto)
+
 
 miConexionSqlite.close()
